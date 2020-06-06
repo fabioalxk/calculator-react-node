@@ -1,13 +1,13 @@
 import React from "react";
-import "./Button.css";
+import "./NumberButton.css";
 
-const isOperator = val => {
+const isOperator = (val) => {
   return !isNaN(val) || val === "." || val === "=";
 };
 
-export const Button = props => (
+export const NumberButton = (props) => (
   <div
-    className={`button-wrapper ${
+    className={`number-button-wrapper ${
       isOperator(props.children) ? null : "operator"
     }`}
     onClick={() => props.handleClick(props.children)}

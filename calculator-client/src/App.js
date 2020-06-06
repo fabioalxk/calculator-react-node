@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button } from "./components/Button";
-import { Input } from "./components/Input";
-import { ClearButton } from "./components/ClearButton";
+import { NumberButton } from "./components/NumberButton/NumberButton";
+import { ResultDisplay } from "./components/ResultDisplay/ResultDisplay";
+import { ClearButton } from "./components/ClearButton/ClearButton";
 const axios = require("axios");
 
 const ERROR_MSG = "ERROR";
@@ -30,7 +30,7 @@ class App extends Component {
         equation: this.state.input,
       });
       console.log("response.data.result", response.data.result);
-      if (response.data.result) {
+      if (response.data.result != null) {
         this.setState({ input: response.data.result });
       } else {
         this.setState({ input: ERROR_MSG, hasErrors: true });
@@ -45,30 +45,32 @@ class App extends Component {
     return (
       <div className="app">
         <div className="calc-wrapper">
-          <Input input={this.state.input} />
+          <ResultDisplay input={this.state.input} />
           <div className="row">
-            <Button handleClick={this.addToInput}>7</Button>
-            <Button handleClick={this.addToInput}>8</Button>
-            <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={this.addToInput}>/</Button>
+            <NumberButton handleClick={this.addToInput}>7</NumberButton>
+            <NumberButton handleClick={this.addToInput}>8</NumberButton>
+            <NumberButton handleClick={this.addToInput}>9</NumberButton>
+            <NumberButton handleClick={this.addToInput}>/</NumberButton>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>4</Button>
-            <Button handleClick={this.addToInput}>5</Button>
-            <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.addToInput}>*</Button>
+            <NumberButton handleClick={this.addToInput}>4</NumberButton>
+            <NumberButton handleClick={this.addToInput}>5</NumberButton>
+            <NumberButton handleClick={this.addToInput}>6</NumberButton>
+            <NumberButton handleClick={this.addToInput}>*</NumberButton>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>1</Button>
-            <Button handleClick={this.addToInput}>2</Button>
-            <Button handleClick={this.addToInput}>3</Button>
-            <Button handleClick={this.addToInput}>+</Button>
+            <NumberButton handleClick={this.addToInput}>1</NumberButton>
+            <NumberButton handleClick={this.addToInput}>2</NumberButton>
+            <NumberButton handleClick={this.addToInput}>3</NumberButton>
+            <NumberButton handleClick={this.addToInput}>+</NumberButton>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>.</Button>
-            <Button handleClick={this.addToInput}>0</Button>
-            <Button handleClick={() => this.handleEqual()}>=</Button>
-            <Button handleClick={this.addToInput}>-</Button>
+            <NumberButton handleClick={this.addToInput}>.</NumberButton>
+            <NumberButton handleClick={this.addToInput}>0</NumberButton>
+            <NumberButton handleClick={() => this.handleEqual()}>
+              =
+            </NumberButton>
+            <NumberButton handleClick={this.addToInput}>-</NumberButton>
           </div>
           <div className="row">
             <ClearButton handleClear={() => this.setState({ input: "" })}>
