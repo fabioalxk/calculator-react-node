@@ -1,5 +1,5 @@
 {
-  "name": "calculator-react-app",
+  "name": "calculator-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
