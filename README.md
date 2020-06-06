@@ -7,7 +7,7 @@ Open two terminals and run the following commands:
 ### Terminal 1️⃣
 
 ```sh
-$ cd calculator-api
+$ cd calculator-server
 $ npm i
 $ npm start
 ```
@@ -17,7 +17,7 @@ $ npm start
 ### Terminal 2️⃣
 
 ```sh
-$ cd calculator-react-app
+$ cd calculator-client
 $ npm i
 $ npm start
 ```
