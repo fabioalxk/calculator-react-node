@@ -24,10 +24,10 @@ $ npm start
 
 ---
 
+The application will start on [http://localhost:3000]
+
 ### How to run the tests ✅
 
 ```sh
 $ mocha
 ```
-
-The application will start on [http://localhost:3000]
