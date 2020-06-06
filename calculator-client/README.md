@@ -1,10 +1,10 @@
-### Installation
+# Project Setup
 
 Open two terminals and run the following commands:
 
 ---
 
-Terminal 1️⃣
+### Terminal 1️⃣
 
 ```sh
 $ cd calculator-api
@@ -14,7 +14,7 @@ $ npm start
 
 ---
 
-Terminal 2️⃣
+### Terminal 2️⃣
 
 ```sh
 $ cd calculator-react-app
@@ -24,7 +24,7 @@ $ npm start
 
 ---
 
-How to run the tests ✅
+### How to run the tests ✅
 
 ```sh
 mocha
